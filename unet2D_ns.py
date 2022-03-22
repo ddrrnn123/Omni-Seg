@@ -13,17 +13,43 @@ import sys, os
 
 in_place = True
 
+class Conv3d(nn.Conv3d):
+
+    def __init__(self, in_channels, out_channels, kernel_size, stride=(1,1,1), padding=(0,0,0), dilation=(1,1,1), groups=1, bias=False):
+        super(Conv3d, self).__init__(in_channels, out_channels, kernel_size, stride, padding, dilation, groups, bias)
+
+    def forward(self, x):
+        weight = self.weight
+        weight_mean = weight.mean(dim=1, keepdim=True).mean(dim=2, keepdim=True).mean(dim=3, keepdim=True).mean(dim=4, keepdim=True)
+        weight = weight - weight_mean
+        std = torch.sqrt(torch.var(weight.view(weight.size(0), -1), dim=1) + 1e-12).view(-1, 1, 1, 1, 1)
+        weight = weight / std.expand_as(weight)
+        return F.conv3d(x, weight, self.bias, self.stride, self.padding, self.dilation, self.groups)
+
+
+def conv3x3x3(in_planes, out_planes, kernel_size=(3,3,3), stride=(1,1,1), padding=1, dilation=1, bias=False, weight_std=False):
+    "3x3x3 convolution with padding"
+    if weight_std:
+        return Conv3d(in_planes, out_planes, kernel_size=kernel_size, stride=stride, padding=padding, dilation=dilation, bias=bias)
+    else:
+        return nn.Conv3d(in_planes, out_planes, kernel_size=kernel_size, stride=stride, padding=padding, dilation=dilation, bias=bias)
+
+
+
+
 class NoBottleneck(nn.Module):
     def __init__(self, inplanes, planes, stride=1, dilation=1, downsample=None, fist_dilation=1, multi_grid=1, weight_std=False):
         super(NoBottleneck, self).__init__()
         self.weight_std = weight_std
         self.gn1 = nn.GroupNorm(16, inplanes)
-
+        # self.conv1 = conv3x3x3(inplanes, planes, kernel_size=(3, 3, 3), stride=stride, padding=(1,1,1),
+        #                         dilation=dilation * multi_grid, bias=False, weight_std=self.weight_std)
         self.conv1 = nn.Conv2d(inplanes, planes, kernel_size=(3, 3), stride=stride, padding=(1,1),dilation=1, bias=False)
         self.relu = nn.ReLU(inplace=in_place)
 
         self.gn2 = nn.GroupNorm(16, planes)
-
+        # self.conv2 = conv3x3x3(planes, planes, kernel_size=(3, 3, 3), stride=1, padding=(1,1,1),
+        #                         dilation=dilation * multi_grid, bias=False, weight_std=self.weight_std)
         self.conv2 = nn.Conv2d(planes, planes, kernel_size=(3, 3), stride=1, padding=(1,1),dilation=1, bias=False)
         self.downsample = downsample
         self.dilation = dilation
@@ -54,8 +80,12 @@ class unet2D(nn.Module):
         self.weight_std = weight_std
         super(unet2D, self).__init__()
 
-
+        # self.conv1 = conv3x3x3(3, 32, stride=[1, 1, 1], weight_std=self.weight_std)
         self.conv1 = nn.Conv2d(3, 32, kernel_size=(3, 3), stride=1, padding=(1,1),dilation=1, bias=False)
+
+        # self.add_0 = self._make_layer(NoBottleneck, 32, 32, layers[0], stride=(1, 1, 1))
+        self.add_0 = self._make_layer(NoBottleneck, 32, 32, layers[0], stride=(2, 2))
+        self.add_1 = self._make_layer(NoBottleneck, 32, 32, layers[0], stride=(4, 4))
 
         self.layer0 = self._make_layer(NoBottleneck, 32, 32, layers[0], stride=(1, 1))
         self.layer1 = self._make_layer(NoBottleneck, 32, 64, layers[1], stride=(2, 2))
@@ -66,6 +96,7 @@ class unet2D(nn.Module):
         self.fusionConv = nn.Sequential(
             nn.GroupNorm(16, 256),
             nn.ReLU(inplace=in_place),
+            #conv3x3x3(256, 256, kernel_size=(1, 1, 1), padding=(0, 0, 0), weight_std=self.weight_std)
             nn.Conv2d(256, 256, kernel_size=(1, 1), stride=1, padding=(0,0),dilation=1, bias=False)
         )
 
@@ -84,6 +115,7 @@ class unet2D(nn.Module):
         self.precls_conv = nn.Sequential(
             nn.GroupNorm(16, 32),
             nn.ReLU(inplace=in_place),
+            # nn.Conv3d(32, 8, kernel_size=1)
             nn.Conv2d(32, 8, kernel_size=(1, 1))
         )
 
@@ -100,6 +132,8 @@ class unet2D(nn.Module):
             downsample = nn.Sequential(
                 nn.GroupNorm(16, inplanes),
                 nn.ReLU(inplace=in_place),
+                # conv3x3x3(inplanes, planes, kernel_size=(1, 1, 1), stride=stride, padding=0,
+                #           weight_std=self.weight_std),
                 nn.Conv2d(inplanes, planes, kernel_size=(1, 1), stride=stride, padding=(0, 0), dilation=1, bias=False)
             )
 
@@ -161,7 +195,7 @@ class unet2D(nn.Module):
                 x = F.relu(x)
         return x
 
-    def forward(self, input, task_id):
+    def forward(self, input, task_id, scale_id):
         x = self.conv1(input)
 
         x = self.layer0(x)
@@ -183,11 +217,11 @@ class unet2D(nn.Module):
         # generate conv filters for classification layer
         task_encoding = self.encoding_task(task_id)
         # print(task_id)
-        task_encoding.unsqueeze_(2).unsqueeze_(2)
+        task_encoding.unsqueeze_(2).unsqueeze_(2)#.unsqueeze_(2)
         x_feat = self.GAP(x)
         x_cond = torch.cat([x_feat, task_encoding], 1)
         params = self.controller(x_cond)
-        params.squeeze_(-1).squeeze_(-1)
+        params.squeeze_(-1).squeeze_(-1)#.squeeze_(-1)
 
         # x8
         x = self.upsamplex2(x)
@@ -207,7 +241,7 @@ class unet2D(nn.Module):
         # x1
         x = self.upsamplex2(x)
         x = x + skip0
-        x = self.x1_resb(x)
+        x = self.x1_resb(x)         # (32, 128, 256)
 
         head_inputs = self.precls_conv(x)
 
@@ -227,7 +261,7 @@ class unet2D(nn.Module):
 
         logits = logits.reshape(-1, 2, H, W)
 
-        return logits
+        return logits, x_feat
 
 def UNet2D(num_classes=1, weight_std=False):
     print("Using DynConv 8,8,2")
