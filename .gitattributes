@@ -1,1 +1,4 @@
 Colab/merging_to_patches_pipeline/test/V11M25-279_1.png filter=lfs diff=lfs merge=lfs -text
+Colab/merging_to_patches_pipeline/V11M25-279/5X/V11M25-279_1.png filter=lfs diff=lfs merge=lfs -text
+Colab/merging_to_patches_pipeline/V11M25-279/10X/V11M25-279_1.png filter=lfs diff=lfs merge=lfs -text
+Colab/merging_to_patches_pipeline/V11M25-279/20X/V11M25-279_1.png filter=lfs diff=lfs merge=lfs -text
