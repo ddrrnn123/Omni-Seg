@@ -1,1 +1,0 @@
-To run the Colab script for mapping results into 1024*1024 lcoal patches, upload the entire "merging_to_patches_pipeline" folder onto Google Drive and run the "OmniSeg_pipeline.ipynb". Further instructions are contained in the Colab script.
