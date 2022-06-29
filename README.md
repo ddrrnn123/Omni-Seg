@@ -13,3 +13,6 @@ year={2022},
 url={https://openreview.net/forum?id=v-z4Zxkt9Ex}
 }
 ```
+
+Journal version: Under review  
+arxiv: https://arxiv.org/abs/2206.13632v1  
