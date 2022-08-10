@@ -10,7 +10,7 @@ This is the official implementation of Omni-Seg: A Scale-aware Dynamic Network f
 ![Docker](https://github.com/ddrrnn123/Omni-Seg/blob/main/GithubFigure/Overview2.png)<br />
 
 **Journal Paper** <br />
-> [A Scale-aware Dynamic Network for Pathological Image Segmentation](https://arxiv.org/pdf/2206.13632v1.pdf) <br />
+> [Omni-Seg: A Scale-aware Dynamic Network for Pathological Image Segmentation](https://arxiv.org/pdf/2206.13632v1.pdf) <br />
 > Ruining Deng, Quan Liu, Can Cui, Tianyuan Yao, Jun Long, Zuhayr Asad, R. Michael Womick, Zheyu Zhu, Agnes B. Fogo, Shilin Zhao, Haichun Yang, Yuankai Huo. <br />
 > *(Under review)* <br />
 
@@ -52,6 +52,8 @@ sudo mkdir $input_dir
 #run the docker
 sudo nvidia-docker run -it --rm -v $input_dir:/INPUTS/ -v $output_dir:/OUTPUTS 
 ```
+
+## Google Colab (need modify)
 
 ## Installation (need modify)
 Please refer to [INSTALL.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/INSTALL.md) for installation instructions of the segmentation.
