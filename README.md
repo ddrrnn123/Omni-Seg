@@ -37,28 +37,28 @@ The contribution of this paper is three-fold: <br />
 (3) superior scale-aware generalization is evidenced by directly applying a model trained on human kidney images to mouse kidney images, without retraining. 
 
 
-##Installation
+## Installation
 Please refer to [INSTALL.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/INSTALL.md) for installation instructions of the segmentation.
 
-##Model
+## Model
 Pretrained model can be found [here](https://https://github.com/ddrrnn123/Omni-Seg/)
 
-##Data
+## Data
 Training data can be found [here](http://haeckel.case.edu/data/KI_data/)
 
-##Omni-Seg - Patch Image Demo
+## Omni-Seg - Patch Image Demo
 
 
 
-##Omni-Seg - Whole Slide Image Demo
+## Omni-Seg - Whole Slide Image Demo
 
 
 
-##Develop
+## Develop
 Please refer to [DEVELOP.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/DEVELOP.md) to train Omni-Seg on a new dataset, design a new architecture based on Omni-Seg.
 
 
-##Citation
+## Citation
 ```
 @inproceedings{
 deng2022omniseg,
