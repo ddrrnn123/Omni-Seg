@@ -5,6 +5,8 @@
 
 This is the official implementation of Omni-Seg: A Scale-aware Dynamic Network for Pathological Image Segmentation. <br />
 
+![]((https://github.com/ddrrnn123/Omni-Seg/blob/main/Relativework.pdf))
+
 Journal Paper <br />
 A Scale-aware Dynamic Network for Pathological Image Segmentation <br />
 Ruining Deng, Quan Liu, Can Cui, Tianyuan Yao, Jun Long, Zuhayr Asad, R. Michael Womick, Zheyu Zhu, Agnes B. Fogo, Shilin Zhao, Haichun Yang, Yuankai Huo. <br />
