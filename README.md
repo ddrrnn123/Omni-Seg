@@ -5,7 +5,7 @@
 
 This is the official implementation of Omni-Seg: A Scale-aware Dynamic Network for Pathological Image Segmentation. <br />
 
-![]((https://github.com/ddrrnn123/Omni-Seg/blob/main/Relativework.pdf))
+![](https://github.com/ddrrnn123/Omni-Seg/blob/main/Relativework.pdf)
 
 Journal Paper <br />
 A Scale-aware Dynamic Network for Pathological Image Segmentation <br />
