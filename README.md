@@ -1,6 +1,6 @@
 # Omni-Seg: A Scale-aware Dynamic Network for Pathological Image Segmentation
 
-### [[Docker]](https://github.com/MASILab/SLANTbrainSeg/tree/master/python) [[project page]](https://https://github.com/ddrrnn123/Omni-Seg/)   [[Journal paper]](https://arxiv.org/pdf/2206.13632v1.pdf) [[MIDL 2022 paper]](https://openreview.net/pdf?id=v-z4Zxkt9Ex) [[SPIE 2023 Paper]](https://arxiv.org/pdf/2206.13632v1.pdf)<br />
+### [[GPU Accelerated Pipeline Docker]](https://github.com/MASILab/SLANTbrainSeg/tree/master/python) [[project page]](https://https://github.com/ddrrnn123/Omni-Seg/)   [[Journal paper]](https://arxiv.org/pdf/2206.13632v1.pdf) [[MIDL 2022 paper]](https://openreview.net/pdf?id=v-z4Zxkt9Ex) [[SPIE 2023 Paper]](https://arxiv.org/pdf/2206.13632v1.pdf)<br />
 
 
 This is the official implementation of Omni-Seg: A Scale-aware Dynamic Network for Pathological Image Segmentation. <br />
