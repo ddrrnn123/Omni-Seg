@@ -10,9 +10,9 @@ This is the official implementation of Omni-Seg: A Scale-aware Dynamic Network f
 ![Docker](https://github.com/ddrrnn123/Omni-Seg/blob/main/GithubFigure/Overview2.png)<br />
 
 Journal Paper <br />
-[A Scale-aware Dynamic Network for Pathological Image Segmentation](https://arxiv.org/pdf/2206.13632v1.pdf) <br />
-Ruining Deng, Quan Liu, Can Cui, Tianyuan Yao, Jun Long, Zuhayr Asad, R. Michael Womick, Zheyu Zhu, Agnes B. Fogo, Shilin Zhao, Haichun Yang, Yuankai Huo. <br />
-*(Under review)* <br />
+-[A Scale-aware Dynamic Network for Pathological Image Segmentation](https://arxiv.org/pdf/2206.13632v1.pdf) <br />
+-Ruining Deng, Quan Liu, Can Cui, Tianyuan Yao, Jun Long, Zuhayr Asad, R. Michael Womick, Zheyu Zhu, Agnes B. Fogo, Shilin Zhao, Haichun Yang, Yuankai Huo. <br />
+-*(Under review)* <br />
 
 MIDL Paper <br />
 [Omni-Seg: A Single Dynamic Network for Multi-label Renal Pathology Image Segmentation using Partially Labeled Data](https://openreview.net/pdf?id=v-z4Zxkt9Ex) <br />
@@ -23,6 +23,8 @@ SPIE Paper <br />
 [An Accelerated Pipeline for Multi-label Renal Pathology Image Segmentation at the Whole Slide Image Level](https://arxiv.org/pdf/2206.13632v1.pdf)<br />
 Haoju Leng*, Ruining Deng*, Zuhayr Asad, R. Michael Womick, Haichun Yang, Lipeng Wan, and Yuankai Huo.<br />
 *(Under review)* <br />
+
+We release an accelerated pipeline as a single [Docker](https://github.com/MASILab/SLANTbrainSeg/tree/master/python).
 
 
 cite: 
