@@ -36,24 +36,28 @@ The contribution of this paper is three-fold: <br />
 (2) semi-supervised consistency regularization of pseudo-labels is introduced to model the inter-scale correlation of unannotated tissue types into a single end-to-end learning paradigm;<br />
 (3) superior scale-aware generalization is evidenced by directly applying a model trained on human kidney images to mouse kidney images, without retraining. 
 
-## Quick Start (need modify)
+## Quick Start
 #### Get our docker image
 
 ```
-sudo docker pull 
+sudo docker pull lengh2/omni_seg
 ```
-#### Run Glo-In-One
+#### Run Omni-Seg
 You can run the following command or change the `input_dir`, then you will have the final segmentation results in `output_dir`
 ```
 # you need to specify the input directory
 export input_dir=/home/input_dir   
 # make that directory
 sudo mkdir $input_dir
+# set output directory
+export output_dir=$input_dir/output
 #run the docker
-sudo nvidia-docker run -it --rm -v $input_dir:/INPUTS/ -v $output_dir:/OUTPUTS 
+sudo nvidia-docker run --shm-size 64G -it --rm -v $input_dir:/INPUTS/ -v $output_dir:/OUTPUTS lengh2/omni_seg 
 ```
-
+<!---
 ## Google Colab (need modify)
+-->
+
 
 ## Installation (need modify)
 Please refer to [INSTALL.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/INSTALL.md) for installation instructions of the segmentation.
