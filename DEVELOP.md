@@ -7,7 +7,7 @@ Basically there are three steps:
 
 - Annotate the WSI rectangularly. Recommend to use ImageScope and save the .xml file for annotation information. 
 - Convert the svs file into PNG files and saved into 40X, 10X and 5X magnifications. Please refer to [Omni_seg_pipeline_gpu/svs_input/svs_to_png.py](Omni_seg_pipeline_gpu/svs_input/svs_to_png.py) for an example to convert svs format to PNG format and resize to different magnifications.
-- Create three folders named as "40X", "10X", and "5X" under [Omni_seg_pipeline_gpu/svs_input](Omni_seg_pipeline_gpu/svs_input) folder. Put 40X, 10X and 5X PNG files into these folders correspondingly. 
+- Create three empty folders named as "40X", "10X", and "5X" under [Omni_seg_pipeline_gpu/svs_input](Omni_seg_pipeline_gpu/svs_input) folder. Put 40X, 10X and 5X PNG files into these folders correspondingly. Each folder must contain only one file when running. 
 
 ## New model
 
@@ -20,7 +20,7 @@ $python3 Random_Step2_Testing_OmniSeg_label_overlap_64_padding.py --reload_path 
 
 ## Run Whole Slide Image segmentation pipeline locally without docker
 - The entire pipeline is at the [Omni_seg_pipeline_gpu](Omni_seg_pipeline_gpu/) folder
-- Create three empty folders in the [Omni_seg_pipeline_gpu](Omni_seg_pipeline_gpu/) folder (before running, these three folders must be empty to remove any data from previous data): 
+- Create three empty folders in the [Omni_seg_pipeline_gpu](Omni_seg_pipeline_gpu/) folder (before running, these three folders must be empty to remove any previous data): 
   1. "clinical_patches" folder
   2. "segmentation_merge" folder
   3. "final_merge" folder
