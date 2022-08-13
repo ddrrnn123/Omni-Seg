@@ -43,9 +43,9 @@ The contribution of this paper is three-fold: <br />
 sudo docker pull lengh2/omni_seg
 ```
 #### Run Omni-Seg
-You can run the following command or change the `input_dir`, then you will have the final segmentation results in `output_dir`
+You can run the following command or change the `input_dir`, then you will have the final segmentation results in `output_dir`. Please refer to "New data" section at [DEVELOP.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/DEVELOP.md) for input data format requirement and data arrangement.
 ```
-# you need to specify the input directory
+# you need to specify the input directory. 
 export input_dir=/home/input_dir   
 # make that directory
 sudo mkdir $input_dir
@@ -59,11 +59,11 @@ sudo nvidia-docker run --shm-size 64G -it --rm -v $input_dir:/INPUTS/ -v $output
 -->
 
 
-## Installation (need modify)
+## Installation
 Please refer to [INSTALL.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/INSTALL.md) for installation instructions of the segmentation.
 
 ## Model (need modify)
-Pretrained model can be found [here](https://https://github.com/ddrrnn123/Omni-Seg/)
+Pretrained model can be found [here](https://github.com/ddrrnn123/Omni-Seg/tree/main/Omni_seg_pipeline_gpu/snapshots_2D)
 
 ## Data
 The training data can be found [here](http://haeckel.case.edu/data/KI_data/)
@@ -76,7 +76,7 @@ The training data can be found [here](http://haeckel.case.edu/data/KI_data/)
 
 
 
-## Develop (need modify)
+## Develop
 Please refer to [DEVELOP.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/DEVELOP.md) to train Omni-Seg on a new dataset, design a new architecture based on Omni-Seg.
 
 
