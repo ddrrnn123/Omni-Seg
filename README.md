@@ -62,17 +62,86 @@ sudo nvidia-docker run --shm-size 64G -it --rm -v $input_dir:/INPUTS/ -v $output
 ## Installation
 Please refer to [INSTALL.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/INSTALL.md) for installation instructions of the segmentation.
 
-## Model (need modify)
+## Model
 Pretrained model can be found [here](https://github.com/ddrrnn123/Omni-Seg/tree/main/Omni_seg_pipeline_gpu/snapshots_2D)
 
 ## Data
 The training data can be found [here](http://haeckel.case.edu/data/KI_data/)
 
-## Omni-Seg - Patch Image Demo (need modify)
+## Omni-Seg - Region Image Demo
+Omni-Seg can easily be run on a single image.
+
+- The entire pipeline is at the [Omni_seg_pipeline_gpu](Omni_seg_pipeline_gpu/) folder
+- Create three empty folders named as "40X", "10X", and "5X" under [Omni_seg_pipeline_gpu/svs_input](Omni_seg_pipeline_gpu/svs_input) folder. Put 40X, 10X and 5X PNG files of the region image into these folders correspondingly. Each folder must contain only one file when running.
+- Create three empty folders in the [Omni_seg_pipeline_gpu](Omni_seg_pipeline_gpu/) folder (before running, these three folders must be empty to remove any previous data): 
+  1. "clinical_patches" folder
+  2. "segmentation_merge" folder
+  3. "final_merge" folder
+- Run the python scripts as following orders:
+  1. [1024_Step1_GridPatch_overlap_padding.py](Omni_seg_pipeline_gpu/1024_Step1_GridPatch_overlap_padding.py)
+  ```
+  python 1024_Step1_GridPatch_overlap_padding.py
+  ```
+  2. [1024_Step1.5_MOTSDataset_2D_Patch_normal_save_csv.py](Omni_seg_pipeline_gpu/1024_Step1.5_MOTSDataset_2D_Patch_normal_save_csv.py)
+  ```
+  python 1024_Step1.5_MOTSDataset_2D_Patch_normal_save_csv.py
+  ```
+  3. [Random_Step2_Testing_OmniSeg_label_overlap_64_padding.py](Omni_seg_pipeline_gpu/Random_Step2_Testing_OmniSeg_label_overlap_64_padding.py)
+  ```
+  python Random_Step2_Testing_OmniSeg_label_overlap_64_padding.py --reload_path 'snapshots_2D/fold1_with_white_UNet2D_ns_normalwhole_1106/MOTS_DynConv_fold1_with_white_UNet2D_ns_normalwhole_1106_e89.pth'
+  ```
+  4. [step3.py](Omni_seg_pipeline_gpu/step3.py)
+  ```
+  python step3.py
+  ```
+  5. [step4.py](Omni_seg_pipeline_gpu/step4.py)
+  ```
+  python step4.py
+  ```
+- The output will be stored at "final_merge" folder.
+
+## Omni-Seg - Whole Slide Image Demo
+CircleNet can also be run on Whole Slide Images in *.svs file format.
+
+Please download the following file:
+- [Human Kidney WSI (3d90_PAS.svs)](https://vanderbilt.box.com/s/sskcgbvz15bcfuh9sra96u1dy1hzqm6o)
+
+We need to annotate and convert data into *.png file format first.
+
+- Annotate the WSI rectangularly to remove most of the empty background. Recommend to use ImageScope and save the .xml file for annotation information. 
+- Convert the svs file into PNG files and saved into 40X, 10X and 5X magnifications. Please refer to [Omni_seg_pipeline_gpu/svs_input/svs_to_png.py](Omni_seg_pipeline_gpu/svs_input/svs_to_png.py) for an example to convert svs format to PNG format and resize to different magnifications.
+- Create three empty folders named as "40X", "10X", and "5X" under [Omni_seg_pipeline_gpu/svs_input](Omni_seg_pipeline_gpu/svs_input) folder. Put 40X, 10X and 5X PNG files into these folders correspondingly. Each folder must contain only one file when running. 
+
+Please create three empty folders in the [Omni_seg_pipeline_gpu](Omni_seg_pipeline_gpu/) folder (before running, these three folders must be empty to remove any previous data): 
+  1. "clinical_patches" folder
+  2. "segmentation_merge" folder
+  3. "final_merge" folder
+  
+To run the Omni-Seg pipeline, please go to [Omni_seg_pipeline_gpu](Omni_seg_pipeline_gpu/) folder and run the python scipts as following orders:
+  1. [1024_Step1_GridPatch_overlap_padding.py](Omni_seg_pipeline_gpu/1024_Step1_GridPatch_overlap_padding.py)
+  ```
+  python 1024_Step1_GridPatch_overlap_padding.py
+  ```
+  2. [1024_Step1.5_MOTSDataset_2D_Patch_normal_save_csv.py](Omni_seg_pipeline_gpu/1024_Step1.5_MOTSDataset_2D_Patch_normal_save_csv.py)
+  ```
+  python 1024_Step1.5_MOTSDataset_2D_Patch_normal_save_csv.py
+  ```
+  3. [Random_Step2_Testing_OmniSeg_label_overlap_64_padding.py](Omni_seg_pipeline_gpu/Random_Step2_Testing_OmniSeg_label_overlap_64_padding.py)
+  ```
+  python Random_Step2_Testing_OmniSeg_label_overlap_64_padding.py --reload_path 'snapshots_2D/fold1_with_white_UNet2D_ns_normalwhole_1106/MOTS_DynConv_fold1_with_white_UNet2D_ns_normalwhole_1106_e89.pth'
+  ```
+  4. [step3.py](Omni_seg_pipeline_gpu/step3.py)
+  ```
+  python step3.py
+  ```
+  5. [step4.py](Omni_seg_pipeline_gpu/step4.py)
+  ```
+  python step4.py
+  ```
+
+The output will be stored at "final_merge" folder.
 
 
-
-## Omni-Seg - Whole Slide Image Demo (need modify)
 
 
 
