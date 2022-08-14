@@ -738,7 +738,7 @@ if __name__ == "__main__":
     contour_map = 0
     slice_map = 0
     slice_map_mapping = 1
-    docker = 1
+    docker = 0
 
     if docker:
         output_dir = '/desktop/src/extra/OmniSeg_MouthKidney_Pipeline/segmentation_merge'

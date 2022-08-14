@@ -564,7 +564,7 @@ def my_collate(batch):
 
 if __name__ == '__main__':
 
-    docker = 1
+    docker = 0
 
     if docker:
         trainset_dir = '/desktop/src/extra/OmniSeg_MouthKidney_Pipeline/clinical_patches'

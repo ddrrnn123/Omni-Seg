@@ -135,7 +135,7 @@ def get_seg_mask(region_size, scale, contours_tissue, holes_tissue, use_holes=Fa
 
 if __name__ == "__main__":
 
-    docker = 1
+    docker = 0
     gpu = 1
 
     start = timeit.default_timer()

@@ -1034,7 +1034,7 @@ def natural_keys(text):
 
 if __name__ == '__main__':
 
-    docker = 1
+    docker = 0
 
     if docker:
         data_dir = '/desktop/src/extra/OmniSeg_MouthKidney_Pipeline/clinical_patches/'
