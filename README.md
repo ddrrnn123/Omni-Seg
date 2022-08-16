@@ -71,6 +71,10 @@ The training data can be found [here](http://haeckel.case.edu/data/KI_data/)
 ## Omni-Seg - Region Image Demo
 Omni-Seg can easily be run on a single image.
 
+Below is an example input of region image.
+
+<img src='GithubFigure/region_input.png' align="center" height="230px"> 
+
 - The entire pipeline is at the [Omni_seg_pipeline_gpu](Omni_seg_pipeline_gpu/) folder
 - Create three empty folders named as "40X", "10X", and "5X" under [Omni_seg_pipeline_gpu/svs_input](Omni_seg_pipeline_gpu/svs_input) folder. Put 40X, 10X and 5X PNG files of the region image into these folders correspondingly. Each folder must contain only one file when running.
 - Create three empty folders in the [Omni_seg_pipeline_gpu](Omni_seg_pipeline_gpu/) folder (before running, these three folders must be empty to remove any previous data): 
@@ -100,6 +104,10 @@ Omni-Seg can easily be run on a single image.
   ```
 - The output will be stored at "final_merge" folder.
 
+If set up correctly, the output should look like
+
+<img src='GithubFigure/region_output.png' align="center" height="230px"> 
+
 ## Omni-Seg - Whole Slide Image Demo
 CircleNet can also be run on Whole Slide Images in *.svs file format.
 
@@ -111,6 +119,10 @@ We need to annotate and convert data into *.png file format first.
 - Annotate the WSI rectangularly to remove most of the empty background. Recommend to use ImageScope and save the .xml file for annotation information. 
 - Convert the svs file into PNG files and saved into 40X, 10X and 5X magnifications. Please refer to [Omni_seg_pipeline_gpu/svs_input/svs_to_png.py](Omni_seg_pipeline_gpu/svs_input/svs_to_png.py) for an example to convert svs format to PNG format and resize to different magnifications.
 - Create three empty folders named as "40X", "10X", and "5X" under [Omni_seg_pipeline_gpu/svs_input](Omni_seg_pipeline_gpu/svs_input) folder. Put 40X, 10X and 5X PNG files into these folders correspondingly. Each folder must contain only one file when running. 
+
+After annotation, the inputs should be like the following image with three different magnifications
+
+<img src='GithubFigure/WSI_input.png' align="center" height="350px"> 
 
 Please create three empty folders in the [Omni_seg_pipeline_gpu](Omni_seg_pipeline_gpu/) folder (before running, these three folders must be empty to remove any previous data): 
   1. "clinical_patches" folder
@@ -140,6 +152,10 @@ To run the Omni-Seg pipeline, please go to [Omni_seg_pipeline_gpu](Omni_seg_pipe
   ```
 
 The output will be stored at "final_merge" folder.
+
+If set up correctly, the output should look like
+
+<img src='GithubFigure/WSI_output.png' align="center" height="350px"> 
 
 
 
