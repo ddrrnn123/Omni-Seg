@@ -164,6 +164,9 @@ If set up correctly, the output should look like
 ## Develop
 Please refer to [DEVELOP.md](https://github.com/ddrrnn123/Omni-Seg/blob/main/DEVELOP.md) to train Omni-Seg on a new dataset, design a new architecture based on Omni-Seg.
 
+## Previous Versions
+#### Google Colab
+A Google Colab version of the Oracle pipeline can be found [here](https://drive.google.com/drive/folders/1vKeDMYI3Xcm6s9yAy5stBhqKWjOFvUoy?usp=sharing). The code demonstrates the patch-wise segmentation of the Oracle pipeline. 
 
 ## Citation
 ```
