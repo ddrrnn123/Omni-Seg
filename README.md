@@ -68,6 +68,8 @@ Pretrained model can be found [here](https://github.com/ddrrnn123/Omni-Seg/tree/
 ## Data
 The training data can be found [here](http://haeckel.case.edu/data/KI_data/)
 
+The example dataset for the pipeline which contains a .SVS input file and three .PNG files with different magnifications generated from the .SVS file can be found [here](https://vanderbilt.box.com/s/7n865diq868lkgah7t350ivfg58tb808)
+
 ## Omni-Seg - Region Image Demo
 Omni-Seg can easily be run on a single image.
 
