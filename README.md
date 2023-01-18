@@ -172,12 +172,20 @@ A Google Colab version of the Oracle pipeline can be found [here](https://drive.
 
 ## Citation
 ```
-@inproceedings{
-deng2022omniseg,
-title={Omni-Seg: A Single Dynamic Network for Multi-label Renal Pathology Image Segmentation using Partially Labeled Data},
-author={Ruining Deng and Quan Liu and Can Cui and Zuhayr Asad and Haichun Yang and Yuankai Huo},
-booktitle={Medical Imaging with Deep Learning},
-year={2022},
-url={https://openreview.net/forum?id=v-z4Zxkt9Ex}
+
+@InProceedings{pmlr-v172-deng22a,
+  title = 	 {Single Dynamic Network for Multi-label Renal Pathology Image Segmentation},
+  author =       {Deng, Ruining and Liu, Quan and Cui, Can and Asad, Zuhayr and and Yang, Haichun and Huo, Yuankai},
+  booktitle = 	 {Proceedings of The 5th International Conference on Medical Imaging with Deep Learning},
+  pages = 	 {304--314},
+  year = 	 {2022},
+  editor = 	 {Konukoglu, Ender and Menze, Bjoern and Venkataraman, Archana and Baumgartner, Christian and Dou, Qi and Albarqouni, Shadi},
+  volume = 	 {172},
+  series = 	 {Proceedings of Machine Learning Research},
+  month = 	 {06--08 Jul},
+  publisher =    {PMLR},
+  pdf = 	 {https://proceedings.mlr.press/v172/deng22a/deng22a.pdf},
+  url = 	 {https://proceedings.mlr.press/v172/deng22a.html},
+  abstract = 	 {Computer-assisted quantitative analysis on Giga-pixel pathology images has provided a new avenue in histology examination. The innovations have been largely focused on cancer pathology (i.e., tumor segmentation and characterization). In non-cancer pathology, the learning algorithms can be asked to examine more comprehensive tissue types simultaneously, as a multi-label setting. The prior arts typically needed to train multiple segmentation networks in order to match the domain-specific knowledge for heterogeneous tissue types (e.g., glomerular tuft, glomerular unit, proximal tubular, distal tubular, peritubular capillaries, and arteries). In this paper, we propose a dynamic single segmentation network (Omni-Seg) that learns to segment multiple tissue types using partially labeled images (i.e., only one tissue type is labeled for each training image) for renal pathology.  By learning from &nbsp;150,000 patch-wise pathological images from six tissue types, the proposed Omni-Seg network achieved superior segmentation accuracy and less resource consumption when compared to the previous the multiple-network and multi-head design. In the testing stage, the proposed method obtains “completely labeled" tissue segmentation results using only “partially labeled" training images. The source code is available at  \url{https://github.com/ddrrnn123/Omni-Seg}}
 }
 ```
