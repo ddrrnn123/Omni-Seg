@@ -12,7 +12,7 @@ This is the official implementation of Omni-Seg: A Scale-aware Dynamic Network f
 **Journal Paper** <br />
 > [Omni-Seg: A Scale-aware Dynamic Network for Pathological Image Segmentation](https://arxiv.org/pdf/2206.13632v1.pdf) <br />
 > Ruining Deng, Quan Liu, Can Cui, Tianyuan Yao, Jun Long, Zuhayr Asad, R. Michael Womick, Zheyu Zhu, Agnes B. Fogo, Shilin Zhao, Haichun Yang, Yuankai Huo. <br />
-> *(Under review)* <br />
+> *IEEE Transactions on Biomedical Engineering* <br />
 
 **MIDL Paper** <br />
 > [Omni-Seg: A Single Dynamic Network for Multi-label Renal Pathology Image Segmentation using Partially Labeled Data](https://openreview.net/pdf?id=v-z4Zxkt9Ex) <br />
