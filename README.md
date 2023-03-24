@@ -22,7 +22,7 @@ This is the official implementation of Omni-Seg: A Scale-aware Dynamic Network f
 **SPIE Paper** <br />
 > [An Accelerated Pipeline for Multi-label Renal Pathology Image Segmentation at the Whole Slide Image Level](https://https://github.com/ddrrnn123/Omni-Seg/)<br />
 > Haoju Leng*, Ruining Deng*, Zuhayr Asad, R. Michael Womick, Haichun Yang, Lipeng Wan, and Yuankai Huo.<br />
-> *(Under review)* <br />
+> *SPIE 2023* <br />
 
 ```diff
 + We release an accelerated pipeline as a single Docker.
