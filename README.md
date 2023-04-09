@@ -1,6 +1,6 @@
 # Omni-Seg: A Scale-aware Dynamic Network for Pathological Image Segmentation
 
-### [[Accelerated Pipeline Docker]](https://hub.docker.com/repository/docker/lengh2/omni_seg) [[Project Page]](https://https://github.com/ddrrnn123/Omni-Seg/)   [[Journal paper]](https://arxiv.org/pdf/2206.13632.pdf) [[MIDL 2022 paper]](https://openreview.net/pdf?id=v-z4Zxkt9Ex) [[SPIE 2023 Paper]](https://arxiv.org/pdf/2206.13632v1.pdf)<br />
+### [[Accelerated Pipeline Docker]](https://hub.docker.com/repository/docker/lengh2/omni_seg) [[Project Page]](https://https://github.com/ddrrnn123/Omni-Seg/)   [[Journal paper]](https://arxiv.org/pdf/2206.13632.pdf) [[MIDL 2022 paper]](https://openreview.net/pdf?id=v-z4Zxkt9Ex) [[SPIE 2023 Paper]](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12471/124710Q/An-accelerated-pipeline-for-multi-label-renal-pathology-image-segmentation/10.1117/12.2653651.full)<br />
 
 
 This is the official implementation of Omni-Seg: A Scale-aware Dynamic Network for Pathological Image Segmentation. <br />
@@ -20,7 +20,7 @@ This is the official implementation of Omni-Seg: A Scale-aware Dynamic Network f
 > *MIDL 2022* <br />
 
 **SPIE Paper** <br />
-> [An Accelerated Pipeline for Multi-label Renal Pathology Image Segmentation at the Whole Slide Image Level](https://https://github.com/ddrrnn123/Omni-Seg/)<br />
+> [An Accelerated Pipeline for Multi-label Renal Pathology Image Segmentation at the Whole Slide Image Level](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12471/124710Q/An-accelerated-pipeline-for-multi-label-renal-pathology-image-segmentation/10.1117/12.2653651.full)<br />
 > Haoju Leng*, Ruining Deng*, Zuhayr Asad, R. Michael Womick, Haichun Yang, Lipeng Wan, and Yuankai Huo.<br />
 > *SPIE 2023* <br />
 
