@@ -9,7 +9,7 @@ This is the official implementation of Omni-Seg: A Scale-aware Dynamic Network f
 ![Overview](https://github.com/ddrrnn123/Omni-Seg/blob/main/GithubFigure/Overview1.png)<br />
 ![Docker](https://github.com/ddrrnn123/Omni-Seg/blob/main/GithubFigure/Overview2.png)<br />
 
-**Journal Paper** <br />
+**IEEE TBME Paper** <br />
 > [Omni-Seg: A Scale-aware Dynamic Network for Pathological Image Segmentation](https://ieeexplore.ieee.org/document/10079171) <br />
 > Ruining Deng, Quan Liu, Can Cui, Tianyuan Yao, Jun Long, Zuhayr Asad, R. Michael Womick, Zheyu Zhu, Agnes B. Fogo, Shilin Zhao, Haichun Yang, Yuankai Huo. <br />
 > *IEEE Transactions on Biomedical Engineering* <br />
@@ -173,19 +173,11 @@ A Google Colab version of the Oracle pipeline can be found [here](https://drive.
 ## Citation
 ```
 
-@InProceedings{pmlr-v172-deng22a,
-  title = 	 {Single Dynamic Network for Multi-label Renal Pathology Image Segmentation},
-  author =       {Deng, Ruining and Liu, Quan and Cui, Can and Asad, Zuhayr and and Yang, Haichun and Huo, Yuankai},
-  booktitle = 	 {Proceedings of The 5th International Conference on Medical Imaging with Deep Learning},
-  pages = 	 {304--314},
-  year = 	 {2022},
-  editor = 	 {Konukoglu, Ender and Menze, Bjoern and Venkataraman, Archana and Baumgartner, Christian and Dou, Qi and Albarqouni, Shadi},
-  volume = 	 {172},
-  series = 	 {Proceedings of Machine Learning Research},
-  month = 	 {06--08 Jul},
-  publisher =    {PMLR},
-  pdf = 	 {https://proceedings.mlr.press/v172/deng22a/deng22a.pdf},
-  url = 	 {https://proceedings.mlr.press/v172/deng22a.html},
-  abstract = 	 {Computer-assisted quantitative analysis on Giga-pixel pathology images has provided a new avenue in histology examination. The innovations have been largely focused on cancer pathology (i.e., tumor segmentation and characterization). In non-cancer pathology, the learning algorithms can be asked to examine more comprehensive tissue types simultaneously, as a multi-label setting. The prior arts typically needed to train multiple segmentation networks in order to match the domain-specific knowledge for heterogeneous tissue types (e.g., glomerular tuft, glomerular unit, proximal tubular, distal tubular, peritubular capillaries, and arteries). In this paper, we propose a dynamic single segmentation network (Omni-Seg) that learns to segment multiple tissue types using partially labeled images (i.e., only one tissue type is labeled for each training image) for renal pathology.  By learning from &nbsp;150,000 patch-wise pathological images from six tissue types, the proposed Omni-Seg network achieved superior segmentation accuracy and less resource consumption when compared to the previous the multiple-network and multi-head design. In the testing stage, the proposed method obtains “completely labeled" tissue segmentation results using only “partially labeled" training images. The source code is available at  \url{https://github.com/ddrrnn123/Omni-Seg}}
+@article{deng2023omni,
+  title={Omni-Seg: A Scale-Aware Dynamic Network for Renal Pathological Image Segmentation},
+  author={Deng, Ruining and Liu, Quan and Cui, Can and Yao, Tianyuan and Long, Jun and Asad, Zuhayr and Womick, R Michael and Zhu, Zheyu and Fogo, Agnes B and Zhao, Shilin and others},
+  journal={IEEE Transactions on Biomedical Engineering},
+  year={2023},
+  publisher={IEEE}
 }
 ```
