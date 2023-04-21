@@ -1,6 +1,6 @@
 # Omni-Seg: A Scale-aware Dynamic Network for Pathological Image Segmentation
 
-### [[Accelerated Pipeline Docker]](https://hub.docker.com/repository/docker/lengh2/omni_seg) [[Project Page]](https://https://github.com/ddrrnn123/Omni-Seg/)   [[IEEE TBME]](https://arxiv.org/pdf/2206.13632.pdf) [[MIDL 2022 paper]](https://openreview.net/pdf?id=v-z4Zxkt9Ex) [[SPIE 2023 Paper]](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12471/124710Q/An-accelerated-pipeline-for-multi-label-renal-pathology-image-segmentation/10.1117/12.2653651.full)<br />
+### [[Accelerated Pipeline Docker]](https://hub.docker.com/repository/docker/lengh2/omni_seg) [[Project Page]](https://https://github.com/ddrrnn123/Omni-Seg/)   [[IEEE TBME Paper]](https://ieeexplore.ieee.org/document/10079171) [[MIDL 2022 paper]](https://openreview.net/pdf?id=v-z4Zxkt9Ex) [[SPIE 2023 Paper]](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/12471/124710Q/An-accelerated-pipeline-for-multi-label-renal-pathology-image-segmentation/10.1117/12.2653651.full)<br />
 
 
 This is the official implementation of Omni-Seg: A Scale-aware Dynamic Network for Pathological Image Segmentation. <br />
