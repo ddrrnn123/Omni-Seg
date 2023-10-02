@@ -180,4 +180,25 @@ A Google Colab version of the Oracle pipeline can be found [here](https://drive.
   year={2023},
   publisher={IEEE}
 }
+
+@inproceedings{deng2022single,
+  title={Single Dynamic Network for Multi-label Renal Pathology Image Segmentation},
+  author={Deng, Ruining and Liu, Quan and Cui, Can and Asad, Zuhayr and Huo, Yuankai and others},
+  booktitle={International Conference on Medical Imaging with Deep Learning},
+  pages={304--314},
+  year={2022},
+  organization={PMLR}
+}
+
+@inproceedings{leng2023accelerated,
+  title={An accelerated pipeline for multi-label renal pathology image segmentation at the whole slide image level},
+  author={Leng, Haoju and Deng, Ruining and Asad, Zuhayr and Womick, R Michael and Yang, Haichun and Wan, Lipeng and Huo, Yuankai},
+  booktitle={Medical Imaging 2023: Digital and Computational Pathology},
+  volume={12471},
+  pages={174--179},
+  year={2023},
+  organization={SPIE}
+}
+
+
 ```
