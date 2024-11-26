@@ -114,7 +114,7 @@ If set up correctly, the output should look like
 CircleNet can also be run on Whole Slide Images in *.svs file format.
 
 Please download the following file:
-- [Human Kidney WSI (3d90_PAS.svs)]([https://vanderbilt.box.com/s/sskcgbvz15bcfuh9sra96u1dy1hzqm6o](https://drive.google.com/drive/folders/1Nx2fSltW3HyPGXiCwNVA4Nci8c_wJ7RZ))
+- [Human Kidney WSI (3d90_PAS.svs)](https://drive.google.com/drive/folders/1Nx2fSltW3HyPGXiCwNVA4Nci8c_wJ7RZ)
 
 We need to annotate and convert data into *.png file format first.
 
